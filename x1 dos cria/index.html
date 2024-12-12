@@ -1,0 +1,148 @@
+<!--Davi Oton RA:24124
+    Miguel Lopes RA:24142
+    João Torres RA:24529-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destruidor de Mundos</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        #game-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 1024px; /* Largura do canvas */
+            height: 576px; /* Altura do canvas */
+            border: 2px solid white; /* Bordas ao redor do container para destacar */
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+     <!-- Tela do jogo-->
+    <div id="#game-container" style="position: relative; display: inline-block;padding:auto">
+        <!-- Barra de saude e cronometro-->
+        <div style="
+            position: absolute;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            padding: 20px;">
+
+
+            <!--Vida do player-->
+            <div 
+                style="display: flex;
+                flex-direction: column;
+                height: auto;
+                width: 100%;">
+
+                <div 
+                    style="position: relative;
+                    height: 30px;
+                    width: 100%;
+                    display: flex;
+                    justify-content:flex-end;">  
+
+                    <div  
+                        style="background-color:yellow;
+                        height: 30px;
+                        width: 100%"></div>
+
+                    <div 
+                        id="vidaplayer"
+                        style="position:absolute;
+                         background-color: blue;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%"></div>
+                
+                </div>
+                <!--Ataque especial-->
+                <div style="position: relative; height: 30px; width: 100%; display: flex; justify-content:flex-start;">
+                    <div style="background-color:yellow; height: 30px; width: 50%"></div>
+                    <div id="playerSuper" style="position:absolute; background-color: orange;top: 0; left: 0; bottom: 0; width: 0%; max-width: 50%"></div>
+                </div>
+            </div>
+
+            <!--Cronometro-->
+            <div 
+                id="tempo"
+                style=
+                "background-color:red;
+                height: 100px;
+                width: 100px; 
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;">
+                10
+            </div>
+                
+            <!--Vida do enemy-->
+            <div 
+                style="display: flex;
+                flex-direction: column;
+                height: auto;
+                width: 100%;">
+
+                <div 
+                    style="position: relative;
+                    height: 30px;
+                    width: 100%">
+
+                    <div  
+                        style="background-color:yellow;
+                        height: 30px;"></div>
+
+                    <div 
+                        id="vidaenemy"
+                        style="position:absolute;
+                        background-color: blue;
+                        top: 0;
+                        right: 0;
+                        bottom: 0; 
+                        left:0"></div>
+                </div> 
+                <!--Ataque especial-->  
+                <div style="position: relative; height: 30px; width: 100%; display: flex; justify-content:flex-end;">
+                    <div style="background-color:yellow; height: 30px; width: 50%"></div>
+                    <div id="enemySuper" style="position:absolute; background-color: orange;top: 0; right: 0; bottom: 0; width: 0%; max-width: 50%"></div>
+                </div>  
+            </div>
+        
+        </div> 
+        <div 
+            id="msgDePerda"
+            style="position: absolute;
+            color:white;
+            display:none;
+            align-items:center;
+            justify-content:center;
+            top: 0;
+            right: 0;
+            bottom: 0; 
+            left:0;" >
+        Salve
+        </div>
+        <canvas ></canvas>
+    </div>
+
+    <script src ="js/utils.js"></script>
+    <script src ="js/classes.js"></script>
+    <script src ="./index.js"></script>
+    
+</body>
+</html>
